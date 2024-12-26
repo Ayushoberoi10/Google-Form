@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		// When the user clicks on <div>, open the popup
+		function myFunction() {
+		  var popup = document.getElementById("myPopup");
+		  popup.classList.toggle("show");
+		}
+		</script>
+</head>
+<body>
+<form action="https://api.web3forms.com/submit" method="POST">
+	<input type="hidden" name="access_key" value="068b5337-ed85-46bd-9d9c-3eb641e2df1a">
+	<div class="form">
+		<div class="title-div">
+			<h1>My First Google Form</h1>
+			<p>This is a google form. This form is created with HTML and CSS.</p>
+			<p class="required">*Required</p>
+		</div>
+
+		<div class="name-div">
+			<div class="name">What is your name?<span class="required">*</span></div>
+			<div class="input-div"><input type="input" name="answer" placeholder="Your answer"></div>
+		</div>
+
+		<div class="college-div">
+			<div class="name">Enter  your college name.</div>
+			<div class="input-div"><input type="input" name="answer" placeholder="Your answer"></div>
+		</div>
+
+		
+		<div class="emailForm">
+			<div class="name">Enter  your Email.</div>
+			<div class="input-div">
+				<input type="email" name="email" required>
+			</div>
+			<div id="errorMessage" style="color:red;"></div>
+		  
+		</div>
+		
+		  <script>
+			document.getElementById('email').addEventListener('input', function() {
+			  var email = this.value;
+			  var errorMessage = document.getElementById('errorMessage');
+			  
+			  // Email validation regular expression
+			  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		  
+			  if (!emailPattern.test(email)) {
+				errorMessage.textContent = "Please enter a valid email address.";
+			  } else {
+				errorMessage.textContent = "";
+			  }
+			});
+		  </script>
+
+
+		<div class="mobile-div">
+			<div class="name">Enter  your mobile no.</div>
+			<div class="input-div"><input type="input" name="answer" placeholder="Your answer"></div>
+		</div>
+
+		<div class="address-div">
+			<div class="name">Enter  your address</div>
+			<div class="input-div"><input type="input" name="answer" placeholder="Your answer"></div>
+		</div>
+		
+		<div class="fileUpload-div">
+			<div class="name">Upload your Resume</div>
+			<div class="input-div"><input type="file" name="file"></div>
+		</div>
+
+		<div class="popup" onclick="myFunction()"><input class="btn" type="submit" name="Submit">
+		  <span class="popuptext" id="myPopup">Check Again</span>
+		</div>
+
+		<div class="last-div">
+			<p class="never">Never submit passwords through Google Forms.</p>
+			<p class="term">This content is neither created nor endorsed by Google, Report Abuse - Term of Service - Private Policy</p>
+			<h2>Google Forms</h2>
+		</div>
+	</div>
+
+</form>
+	  
+</body>
+</html>
